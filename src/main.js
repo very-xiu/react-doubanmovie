@@ -1,22 +1,16 @@
 // JS打包入口文件
-import Vue from 'vue'
+import React from 'react';
+import ReactDOM from 'react-dom'
 
-import $ from 'jquery'
-
-import './css/index.scss'
-
-// 发布思路： bundle.js 中只存放 自己的代码， 第三方包的代码，全部抽离到 另外的JS中
-
-$(function(){
-    $('li:odd').css('backgroundColor','pink');
-    $('li:even').css('backgroundColor','skyblue');
-});
-
-class Person{
-    static info = {name:'无服务'}
+//使用class创建的类，通过extends关键字继承了React.Component之后，这个类就是一个组件的模板
+class Hello extends React.Component{
+    render(){
+        return <div>
+            <h1>这是使用class类创建的组件</h1>
+        </div>;
+    }
 }
-console.log(Person.info.name);
 
-var vm = new Vue({
-    
-})
+ReactDOM.render(<div>
+    <Hello></Hello>
+</div>,document.getElementById('app'));

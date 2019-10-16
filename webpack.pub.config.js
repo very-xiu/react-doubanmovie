@@ -4,7 +4,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 // 导入每次删除文件夹的插件
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 //导入抽取css插件
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -73,7 +72,7 @@ module.exports = {
                 publicPath: '../'
               })},
             {test:/\.(png|gif|jpg|bmp)$/, use:'url-loader?limit=5000&name=images/[hash:8]-[name].[ext]'},
-            {test:/\.js$/, use:'babel-loader', exclude:/node_modules/}
+            {test:/\.jsx?$/, use:'babel-loader', exclude:/node_modules/}
         ]
     }
 }
