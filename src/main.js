@@ -2,15 +2,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
-//使用class创建的类，通过extends关键字继承了React.Component之后，这个类就是一个组件的模板
-class Hello extends React.Component{
-    render(){
-        return <div>
-            <h1>这是使用class类创建的组件</h1>
-        </div>;
-    }
-}
+// 导入评论列表样式【注意：这种样式是全局的】,这个了解了解就好了，不必深究
+// import './css/CommentList.css'
+
+import CommentList from './components/comments/CommentList.jsx'
 
 ReactDOM.render(<div>
-    <Hello></Hello>
+    <CommentList></CommentList>
 </div>,document.getElementById('app'));
