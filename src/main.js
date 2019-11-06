@@ -2,11 +2,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
-// 导入评论列表样式【注意：这种样式是全局的】,这个了解了解就好了，不必深究
-// import './css/CommentList.css'
+// 导入项目根组件
+import App from './App.jsx'
 
-import CommentList from './components/comments/CommentList.jsx'
+ReactDOM.render(<App>
 
-ReactDOM.render(<div>
-    <CommentList></CommentList>
-</div>,document.getElementById('app'));
+</App>,document.getElementById('app'));
+
+module.hot.accept();
